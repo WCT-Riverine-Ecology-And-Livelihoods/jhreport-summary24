@@ -13,19 +13,28 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            margin: 0;
         }
         .center-content {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 100%; /* Ensure the image fits within the container */
+            max-height: 100%; /* Ensure the image fits within the container */
+            width: auto; /* Ensure the image maintains its aspect ratio */
+            height: auto; /* Ensure the image maintains its aspect ratio */
+        }
+
+        @media (max-width: 768px) { /* Adjust for mobile devices */
+            .center-container {
+                height: 100vh; /* Make sure the container fills the viewport height */
+            }
+            .center-content {
+                max-width: 100%; /* Ensure the image takes up the full width of the container */
+                max-height: 100%; /* Ensure the image takes up the full height of the container */
+            }
         }
     </style>
 </head>
 <body>
     <div class="center-container">
-        <div class="center-content">
-            <img alt="" src="images/image1.gif" title="">
-        </div>
+        <img class="center-content" alt="" src="images/image1.gif" title="">
     </div>
 </body>
 </html>
